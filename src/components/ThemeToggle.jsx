@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import ThemeContext from "../context/ThemeContext";
 
-const ThemeToggle = () => {
+const ThemeToggle = ({children}) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <button onClick={toggleTheme} type="button" className="btn btn-secondary">
-      Switch to {theme === "light" ? "Dark" : "Light"} Mode
-    </button>
+    <div className="nav_icon" onClick={toggleTheme}>
+      {children}
+    </div>
   );
 };
 

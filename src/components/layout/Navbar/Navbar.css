@@ -1,0 +1,84 @@
+.custom_navbar {
+    position: fixed;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    padding: 5px 5px;
+    transition: 0.3s all;
+    z-index: 1000;
+    border-radius: 0px;
+    backdrop-filter: blur(0px);
+    border: 1px solid rgba(167, 166, 166, 0);
+    background-color: rgba(201, 201, 201, 0);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom_navbar::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 500px;
+    height: 100%;
+    opacity: 0;
+    border-radius: 0;
+    pointer-events: none;
+    background-image: url("/public/noise.jpg");
+}
+
+.custom_navbar.scrolled {
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgb(167, 166, 166);
+    background-color: rgba(201, 201, 201, 0.47);
+    transition: 0.3s all;
+    top: 0;
+}
+
+.custom_navbar.scrolled::before {
+    border-radius: 30px;
+    opacity: 0.2;
+}
+
+.scrollbar-track {
+    display: none !important;
+}
+
+.dark .custom_navbar {
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+    border: 1px solid rgba(200, 200, 200, 0);
+
+}
+.dark .custom_navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.137);
+    color: black;
+    border: 1px solid rgba(200, 200, 200, 0.271);
+}
+
+.dark .custom_navbar::before {
+    opacity: 0;
+}
+.dark .custom_navbar.scrolled::before {
+    opacity: 0.1;
+}
+
+.nav_icon img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav_tip{
+    opacity: 0;
+}

@@ -1,13 +1,26 @@
-body{
-    background: #fff;
-    transition: 0.2s all;
+@font-face {
+  font-family: "Alro";
+  src: url("/src/assets/fonts/alro-alro-regular-400.otf");
 }
-.dark body{
-    background: #05002e;
-    transition: 0.2s all;
+
+@font-face {
+  font-family: "Alro";
+  src: url("/src/assets/fonts/alro-alro-bold-700.otf");
+  font-weight: bold;
 }
-html{
-    scroll-behavior: smooth;
+
+body {
+  background: linear-gradient(to bottom right, #f0f0f0, #d0d0d0);
+  transition: 0.2s all;
+}
+
+.dark body {
+  background: #000;
+  transition: 0.2s all;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 #smooth-wrapper {
@@ -17,4 +30,45 @@ html{
 
 #smooth-content {
   will-change: transform;
+}
+.bg_gradient{
+  position: fixed;
+  bottom: 20%;
+  right: 10%;
+  width: 1500px;
+  height: 1500px;
+  background: radial-gradient(rgb(144, 0, 255) 0, transparent 50%);
+  z-index: -2;
+}
+.dark .bg_gradient {
+  background: radial-gradient(blue 0, transparent 50%);
+}
+.bg_gradient2{
+  position: fixed;
+  bottom: 10%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(rgb(207, 118, 251) 100%, transparent);
+  z-index: -3;
+  filter: blur(10px);
+}
+.bg_gradient2::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  background-color: #d0d0d0;
+}
+.dark .bg_gradient2 {
+  background: radial-gradient(blue 100%, transparent);
+
+}
+.dark .bg_gradient2::before {
+  background-color: #000;
 }
